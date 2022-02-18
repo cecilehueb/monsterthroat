@@ -1,0 +1,294 @@
+[
+
+{
+    "streetname": "Centraal Station",
+    "lat": "52.378004",
+    "lon": "4.901429",
+    "type": "Hoofdkantoor",
+    "current": ""
+},
+{
+    "streetname": "Nieuwezijds Voorburgwal",
+    "lat": "52.374118",
+    "lon": "4.890754",
+    "type": "Hoofdkantoor",
+    "current": "Shopping Mall"
+},
+{
+    "streetname": "Hermonystraat",
+    "number": "45",
+    "lat": "52.356126",
+    "lon": "4.903267",
+    "type": "Bijkantoor",
+    "current": "Creative studio"
+},
+{
+    "streetname": "Amstel",
+    "number": "212",
+    "lat": "52.365863",
+    "lon": "4.900354",
+    "type": "Bijkantoor",
+    "current": "Fancy Dining"
+},
+{
+    "streetname": "Herengracht",
+    "number": "600",
+    "lat": "52.365415",
+    "lon": "4.9002512",
+    "type": "Bijkantoor",
+    "current": "SGS Packaging"
+},
+{
+    "streetname": "van der Helstraat",
+    "number": "",
+    "lat": "52.355466",
+    "lon": "4.893106",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Haarlemmerdijk",
+    "number": "99-101",
+    "lat": "52.3830647",
+    "lon": "4.8841211",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Borgerstraat",
+    "number": "172-174",
+    "lat": "52.364364",
+    "lon": "4.863110",
+    "type": "Bijkantoor",
+    "current": "Hema?"
+},
+{
+    "streetname": "Hobbemastraat",
+    "number": "5",
+    "lat": "52.36131",
+    "lon": "4.8825006",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Bloemgracht",
+    "number": "288-298",
+    "lat": "52.3740239",
+    "lon": "4.8771974",
+    "type": "Bijkantoor",
+    "current": "Postkantoor"
+},
+{
+    "streetname": "Zaanstraat",
+    "number": "",
+    "lat": "52.389801",
+    "lon": "4.874344",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Jan Evertsenstraat",
+    "number": "",
+    "lat": "52.371077",
+    "lon": "4.854870",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Postjesweg",
+    "number": "",
+    "lat": "52.364372",
+    "lon": "4.8534472",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Overtoom",
+    "number": "429",
+    "lat": "52.358964",
+    "lon": "4.860492",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Saxen Weimarlaan",
+    "number": "",
+    "lat": "52.3528097",
+    "lon": "4.8568243",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "van Eegenstraat",
+    "number": "139",
+    "lat": "52.356574",
+    "lon": "4.870468",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Roelof Hartplein",
+    "number": "",
+    "lat": "52.352617",
+    "lon": "4.882536",
+    "type": "Zuid",
+    "current": ""
+},
+{
+    "streetname": "Lutmastraat",
+    "number": "",
+    "lat": "52.3505679",
+    "lon": "4.8962878",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Rijnstraat",
+    "number": "",
+    "lat": "52.3488049",
+    "lon": "4.904432",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Kerkstraat",
+    "number": "152-156",
+    "lat": "52.3632359",
+    "lon": "4.8887809",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Kalverstraat",
+    "number": "68",
+    "lat": "52.3709021",
+    "lon": "4.8912147",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Prins Hendrikkade",
+    "number": "190",
+    "lat": "52.371067",
+    "lon": "4.912059",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Diamantbeurs, Weesperplein",
+    "number": "2",
+    "lat": "52.362075",
+    "lon": "4.907171",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Tulpplein",
+    "number": "4",
+    "lat": "52.360028",
+    "lon": "4.905886",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Tweede Oosterparkstraat",
+    "number": "",
+    "lat": "52.356629",
+    "lon": "4.916415",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Bredeweg",
+    "number": "17",
+    "lat": "52.3553085",
+    "lon": "4.9305703",
+    "type": "Bijkantoor",
+    "current": ""
+},
+{
+    "streetname": "Dapperplein",
+    "number": "",
+    "lat": "52.362180",
+    "lon": "4.927787",
+    "type": "",
+    "current": ""
+},
+{
+    "streetname": "Sumatrastraat",
+    "number": "",
+    "lat": "52.361414",
+    "lon": "4.936538",
+    "type": "",
+    "current": ""
+},
+{
+    "streetname": "Veemarkt",
+    "number": "",
+    "lat": "52.368014",
+    "lon": "4.937241",
+    "type": "",
+    "current": ""
+},
+{
+    "streetname": "Molukkenstraat",
+    "number": "",
+    "lat": "52.366013",
+    "lon": "4.939653",
+    "type": "",
+    "current": ""
+},
+{
+    "streetname": "Sumatraplantsoen",
+    "number": "",
+    "lat": "52.359778",
+    "lon": "4.942224",
+    "type": "",
+    "current": ""
+},
+{
+    "streetname": "Oogstraat / Tuinbouwstraat",
+    "number": "",
+    "lat": "52.339365",
+    "lon": "4.943778",
+    "type": "",
+    "current": ""
+},
+{
+    "streetname": "Sloterdijk",
+    "number": "",
+    "lat": "52.384711",
+    "lon": "4.847012",
+    "type": "",
+    "current": ""
+},
+{
+    "streetname": "Meeuwenlaan",
+    "number": "",
+    "lat": "52.383088",
+    "lon": "4.910065",
+    "type": "",
+    "current": ""
+},
+{
+    "streetname": "van der Pekstraat",
+    "number": "47-49",
+    "lat": "52.3884388",
+    "lon": "4.9091797",
+    "type": "",
+    "current": ""
+},
+{
+    "streetname": "Nieuwendammerdijk",
+    "number": "",
+    "lat": "52.3910447",
+    "lon": "4.9401927",
+    "type": "",
+    "current": ""
+}
+
+
+
+
+
+]

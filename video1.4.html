@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+
+    <title>mapping with JSON info</title>
+</head>
+<body>
+    <style>
+        #ISSmap { 
+            height: 50vh;
+            width: 50%;
+        }
+    </style>
+<!-- API is a software intermediary that allows to applications to talk to each other; to exchange data -->
+<!-- JSON files provide data in JavaScript Object notation -->
+    <h1> Where is ISS? </h1>
+    <p>latitude: <span id="lat"> </span></p>
+    <p>longitude: <span id="lon"></span></p>
+
+    <div id="ISSmap"></div>
+
+
+    <script>
+
+    // creates map and tiles
+    const map = L.map('ISSmap').setView([0, 0], 3);
+    const tileURL = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png?{foo}';
+    const attribution = {foo: 'bar', attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'};
+    const tiles = L.tileLayer(tileURL, attribution)
+    tiles.addTo(map);
+
+    // creates marker
+    const marker = L.marker([0, 0]).addTo(map);
+
+
+    // sets interval
+    
+   
+
+
+    // gets location of ISS
+    const getISS_url = "https://api.wheretheiss.at/v1/satellites/25544";
+    async function getISS(){
+        const response = await fetch(getISS_url);
+        const data = await response.json();
+        const { latitude, longitude} = data;
+        map.setView([latitude, longitude]);
+
+        marker.setLatLng([latitude, longitude]);
+
+        document.querySelector("#lat").textContent = latitude;
+        document.querySelector('#lon').textContent = longitude;
+    }
+
+    getISS();
+
+    setInterval(getISS, 1000);
+
+
+    </script>
+    
+</body>
+</html>

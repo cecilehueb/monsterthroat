@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+</head>
+<body>
+    <!-- <img src="" alt="image"> -->
+    <canvas id="myChart" width="400"></canvas>
+    <script>
+
+    graphIt();
+    
+    async function graphIt() {
+        const data = await getData();
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.xdata,
+                datasets: [{
+                    label: 'Global temp',
+                    data: data.yglobTemp,
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                    ],
+                    backgroundColor: [
+                    'rgba(255, 99, 132, 1)',
+                  
+                    ],
+                    borderWidth: 1
+                }, {
+                    label: 'nHemp temp',
+                    data: data.ynHempTemp,
+                    borderColor: [
+                        '#009999',
+                    ],
+                    backgroundColor: ['#009999'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+        scales: {
+            y: {
+                beginAtZero: false,
+            }
+        }
+    }
+        });
+    };
+    
+    async function getData() {
+        const xdata = [];
+        const yglobTemp = [];
+        const ynHempTemp = [];
+
+        const response = await fetch('ZonAnn.Ts+dSST.csv');
+        const data = await response.text();
+
+        const table = data.split('\n').splice(1);
+        table.forEach(elm => {
+            const row = elm.split(',');
+            const year = row[0];
+            xdata.push(year);
+            const globTemp = row[1];
+            yglobTemp.push( parseFloat(globTemp) + 14);
+            const nHempTemp = row[2];
+            ynHempTemp.push( parseFloat(nHempTemp) + 14);
+
+            console.log(year, globTemp, nHempTemp);
+        })
+
+        return {xdata, yglobTemp, ynHempTemp};
+    };
+
+
+
+
+        // catchRainbow()
+        //     .then(()=> {
+        //         console.log("it worked!");
+        //     })
+        //     .catch(() => {
+        //         console.log("error");
+        //         console.log(error);
+        //     });
+
+        // async function catchRainbow() {
+        //     const response = await fetch('irene.JPG');
+        //     const blob = await response.blob();
+        //     console.log(blob);
+        //     document.querySelector("img").src = URL.createObjectURL(blob);
+        // };
+
+
+        // fetch("irene.jpg").then(response => {
+        //     console.log(response);
+        //     return response.blob();
+        // }).then(blob => {
+        //     console.log(blob);
+        //     document.querySelector("img").src = URL.createObjectURL(blob); 
+        // }).catch( error => {
+        //     console.log("error");
+        //     console.log(error);
+
+        // });
+
+    </script>
+</body>
+</html>
