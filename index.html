@@ -5,109 +5,135 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.6.0/dist/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script>
+	<script src="https://unpkg.com/mappa-mundi@0.0.4/dist/mappa.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="p5js.css">
+
 </head>
 <body>
-    <!-- <img src="" alt="image"> -->
-    <canvas id="myChart" width="400"></canvas>
-    <script>
 
-    graphIt();
-    
-    async function graphIt() {
-        const data = await getData();
-        const ctx = document.getElementById('myChart').getContext('2d');
-        const myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: data.xdata,
-                datasets: [{
-                    label: 'Global temp',
-                    data: data.yglobTemp,
-                    borderColor: [
-                        'rgba(255, 99, 132, 1)',
-                    ],
-                    backgroundColor: [
-                    'rgba(255, 99, 132, 1)',
-                  
-                    ],
-                    borderWidth: 1
-                }, {
-                    label: 'nHemp temp',
-                    data: data.ynHempTemp,
-                    borderColor: [
-                        '#009999',
-                    ],
-                    backgroundColor: ['#009999'],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-        scales: {
-            y: {
-                beginAtZero: false,
-            }
-        }
-    }
-        });
-    };
-    
-    async function getData() {
-        const xdata = [];
-        const yglobTemp = [];
-        const ynHempTemp = [];
+<div class="wrapper">
+    <div class="text">
 
-        const response = await fetch('ZonAnn.Ts+dSST.csv');
-        const data = await response.text();
+        <div class="scrollobject sub" id="come">
+            <p>
+                Come to the postoffice!
+            </p>
+            <p>Do it every morning!
+            </p>
+            <p>
+                Make it a ritual!
+            </p>
+            <p>Come queue in line!</p>
+        </div>
 
-        const table = data.split('\n').splice(1);
-        table.forEach(elm => {
-            const row = elm.split(',');
-            const year = row[0];
-            xdata.push(year);
-            const globTemp = row[1];
-            yglobTemp.push( parseFloat(globTemp) + 14);
-            const nHempTemp = row[2];
-            ynHempTemp.push( parseFloat(nHempTemp) + 14);
+        <div class="scrollobject" id="totters">
+            <p>
+                The trolley totters dangerously and hits the sidewalk, but no one is concerned. Jumping
+little packages, like toddlers on a break, fall back into their place. They are all the same, but
+some of them are CAUTION FRAGILE, and others produce the sound of shattering glass. Yet
+no one is concerned.
+            </p>
+        </div>
 
-            console.log(year, globTemp, nHempTemp);
-        })
+        <div class="scrollobject" id="removed">
+            <p>Has it removed you from the world we live in? </p>
+        </div>
 
-        return {xdata, yglobTemp, ynHempTemp};
-    };
+        <div class="scrollobject red title" id="centre">
+            <p>
+                We are in the centre of Amsterdam. 
+            </p>
+        </div>
+
+        <div class="scrollobject red" id="church">
+            <p>
+                The buildings look like churches. They are serious, and hollow too. They are built from heavy
+stone and posted at prominent places. They uncomprongmisingly take their space up in the
+city. You are submerged in space and light. Some have heavy swinging doors that lead from
+the entrance to the main hall, where sunlight falls through the windows in its heigh ceiling.
+There are stained glass windows, displaying angelic figures, and stone carved statues, that
+refer to the five continents. Three counters are symmetrically placed in the space. Stamps,
+national, international and giro-affairs. 
+            </p>
+        </div>
 
 
+        <div class="scrollobject red" id="city">
+            <p>A map of the city, dated 1930, reveals the locations of all Amsterdam Post Offices in 1930. Nieuwe Zijdse Voorburgwal, Kalverstraat, Bloemgracht, Zaanstraat, Haarlemmerdijk, Sloterdijk, John Franklinstraat, Postjesweg, Borgerstraat, Bilderdijkkade, Overtoom, v Eegenstraat, Amstelveenseweg, JH Koenenstraat, Lutmastraat, Rijn Straat, Albert Kuijp, vd Heijdenstraat, Bredeweg, Eerste Oosterparkstraat, Dapperplein, Tulpplein, Weesperplein, Sumatratraat, Sumatraplantsoen, Molukkenstraat, Veemarkt, Amstel, Kerkstraat, Vossiusstraat, Sint Antoniesbreestraat, Bijenkorf (de Dam). 
+            </p>
+        </div>
+
+        <div class="scrollobject red" id="nostalgic">
+            <p>
+                But the last post office disappeared from the Netherlands in 2008. <span class="sub">Welcome to post-post
+                office! Try not to be nostalgic.</span>
+
+            </p>
+        </div>
+
+        <div class="scrollobject red" id="gone">
+            <p>
+                The liberalization of the postal market at the end of 20th century has drastically changed
+the architecture that houses postal services and the labour that performs it. The stateowned
+business became a commercial business, ready to compete. But don’t be nostalgic,
+the mail service has always been about efficiency. Postal codes were introduced in 1977 to
+simplify the sorting of mail. The organization thrives through a systematic classification of
+the spaces it conveys between, and no one wants their mail to be late. Managing time is
+inherently part of a system that so predictably, precisely functions in a city. But since its
+liberalization working conditions suffered. Many jobs were lost and full time positions have changed into part time jobs. Working under flex-contracts, job-security has deteriorated,
+while wages were cut and the work got deskilled.
+
+            </p>
+        </div>
+
+        <div class="scrollobject red" id="package">
+            <p>
+                The business disposed of its postoffices. Instead it installed so-called ‘post agencies’
+throughout the city. These service points are located inside shops. They combine their own
+business with the affairs of the postal service, further entangling postal services with
+commercial activities. Meanwhile e-commerce businesses have grown. Although the amount
+of mail sent between individuals has shrunk, the parcel market has grown over the last
+years.4 Are E-commerce businesses and the postal service even separable? Both businesses
+take part in the same commodity chain. Are they swallowed by the same thing? Where has
+the church of our postal service gone?
+
+            </p>
+        </div>
+
+        <div class="scrollobject blue sub" id="now">
+            <p>
+                Now let me take you to another building.
+
+            </p>
+        </div>
+
+        <div class="scrollobject blue sub" id="hallway">
+            <p>
+                This is an empty place. A large hallway. Tall walls. A floor so smooth that it makes trolleys
+bicker. They yearn for the hollow. It is a breath of empty air; a burb that goes inwards. It
+has doors on all sides, big ones and small ones. Things here should be stacked on top of
+each other. It is a bit like a church, but it is not build to be impressive. Its ceilings are
+attractive, but so is its floor. You can’t wait to glide it. You want to fill empty space with
+effective speed and roll out of the centre though one of its doors. You are yearning for it, in
+the most generic way, and with you are always many others.
+
+            </p>
+        </div>
+
+        
+    </div>
+
+    <div class="visuals" id="visuals">
+        <div id="mapPane"></div>
+    </div>
+
+</div>
 
 
-        // catchRainbow()
-        //     .then(()=> {
-        //         console.log("it worked!");
-        //     })
-        //     .catch(() => {
-        //         console.log("error");
-        //         console.log(error);
-        //     });
 
-        // async function catchRainbow() {
-        //     const response = await fetch('irene.JPG');
-        //     const blob = await response.blob();
-        //     console.log(blob);
-        //     document.querySelector("img").src = URL.createObjectURL(blob);
-        // };
-
-
-        // fetch("irene.jpg").then(response => {
-        //     console.log(response);
-        //     return response.blob();
-        // }).then(blob => {
-        //     console.log(blob);
-        //     document.querySelector("img").src = URL.createObjectURL(blob); 
-        // }).catch( error => {
-        //     console.log("error");
-        //     console.log(error);
-
-        // });
-
-    </script>
+<script src="animation.js"></script>
 </body>
 </html>
