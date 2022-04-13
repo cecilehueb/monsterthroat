@@ -116,21 +116,23 @@ function draw(){
   }
   
 //  TIMESCEDULE
-
+    if(currentObj === 'title') {
+        canvas.background(0, alpha);
+    }
     if (currentObj === 'come') {
         canvas.background(0, alpha);
-        for (let i = 0; i<randomBubbles.length; i++) {
-            randomBubbles[i].show();
-            randomBubbles[i].shake(2);
+        // for (let i = 0; i<randomBubbles.length; i++) {
+        //     randomBubbles[i].show();
+        //     randomBubbles[i].shake(2);
 
-        }
+        // }
 
     } else if (currentObj === 'totters') {
         canvas.background(0, alpha);
-        for (let i = 0; i<randomBubbles.length; i++) {
-            randomBubbles[i].show();
-            randomBubbles[i].shake(4);
-        }
+        // for (let i = 0; i<randomBubbles.length; i++) {
+        //     randomBubbles[i].show();
+        //     randomBubbles[i].shake(4);
+        // }
         
         centre.show();
     } else if (currentObj === 'removed') {
